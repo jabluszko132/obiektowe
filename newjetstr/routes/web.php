@@ -27,10 +27,18 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('admin/users',function () {
-    return '<h1>Użytkownicy</h1>';
-});
+Route::redirect('admin','admin/home');
 
-Route::get('admin/home',function () {
-    return '<h1>Strona domowa</h1>';
+
+
+Route::prefix('admin')->group(function(){
+
+    Route::get('users',function () {
+        return '<h1>Użytkownicy</h1>';
+    });
+    
+    Route::get('home',function () {
+        return '<h1>Strona domowa</h1>';
+    });
+    
 });

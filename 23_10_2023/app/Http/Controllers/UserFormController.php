@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UserFormController extends Controller
 {
-    public function userForm(){
-        return 'form';
+    public function showUser(Request $req){
+        return $req->input();
     }
 }
